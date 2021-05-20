@@ -7,3 +7,5 @@ new Vue({
   render: h => h(App),
 }).$mount('#app')
 
+// main.js
+Vue.prototype.$eventBus = new Vue()

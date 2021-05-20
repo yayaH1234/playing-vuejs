@@ -2,16 +2,29 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <c2 />
+    <c1 />
+    <InCompo />
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import C1 from "./components/C1";
+import C2 from "./components/C2";
+import InCompo from "./components/InCompo";
 
 export default {
   name: 'App',
   components: {
+    InCompo,
+    C2,
+    C1,
     HelloWorld
+  },data(){
+    return {
+      msg:'some text'
+    }
   }
 }
 </script>

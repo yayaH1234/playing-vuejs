@@ -49,7 +49,7 @@
     <div class="myDiv2">
       <div style="float:left;width:0">
         <p style="white-space: nowrap">Please tape words :</p>
-        <input id="mywt"  type="text" value="" @keyup.enter="say"/>
+        <textarea id="mywt" style="" v-model="text2"  value=""  @keyup.enter="say"/>
         <input type="button" value="valide" @click="say()"/>
       </div>
       <h2>EX-2 show after tape</h2>
@@ -59,12 +59,28 @@
         <h2>{{ title }}</h2>
       </div>
     </div>
+
+
+
+    <HayWord :msg="msg" />
+
+
+
+    <div id="app">
+      <p><button v-on:click="clickCount += 1">Add One More Click</button></p>
+      <p> Same compuent > The button has been clicked {{ clickCount }} times</p>
+    </div>
+
+
   </div>
+
 </template>
 
 <script>
+import HayWord from "./HayWord";
 export default {
  name: 'HelloWorld',
+  components: { HayWord },
  props: {
    msg: String
 
@@ -73,14 +89,18 @@ export default {
    return{
      text: '',
      title: '',
-     aff: ''
+     aff: '',
+     text2: '',
+     clickCount: 0
    }
  },
   methods:{
-    say(e) {
-      alert(e.target.value)
-      this.title = e.target.value
-      e.target.value = ''
+    say() {
+      //alert(e.target.value)
+      //this.title = e.target.value
+      this.title=this.text2
+      //e.target.value = ''
+      this.text2=''
     }
   }
 }
@@ -112,5 +132,43 @@ a {
   border: 5px outset green;
   background-color: lightcyan;
   text-align: center;
+
+
+  border-radius: 5px;
+  padding: 20px;
+}
+
+
+
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.myForms {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 </style>
