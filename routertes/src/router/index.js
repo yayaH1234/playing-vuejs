@@ -21,7 +21,8 @@ const  routes= [
     {
         path: '/dycomp',
         name: 'dycomp',
-        component: dycomp
+        component: dycomp,
+        props:true
     },
     {
         path: '/inp/',

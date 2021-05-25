@@ -1,6 +1,6 @@
 <template>
 <div>
-Other component....
+Other page component....
   <p>{{ this.getid }}</p>
 </div>
 </template>
@@ -10,12 +10,13 @@ export default {
   name: "dycomp",
   props :{
     id:String
-  },watch: {
+  },
+  watch: {
     id : function(){console.log("Changed value"+this.id)}
   },
     data: function ()
         {return {
-           getid:this.$route.params.id
+           getid:this.id
          }}
 }
 </script>
