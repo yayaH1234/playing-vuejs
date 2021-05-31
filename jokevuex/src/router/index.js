@@ -20,7 +20,7 @@ const routes = [
   },
   {
   path: '/test',
-    name: 'IndependentTest',
+    name: 'Independen',
     component: IndependentTest
   }
 ]

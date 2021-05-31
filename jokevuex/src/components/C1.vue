@@ -1,7 +1,7 @@
 <template>
   <div >
 Inserting :
-    <input type="text" >
+    <input type="text" v-model="sendedMsg" >
     <input type="submit" @click="clicking">
   </div>
 </template>
@@ -11,6 +11,11 @@ import { mapActions } from 'vuex'
 
 export default {
   name: "C1",
+  data(){
+   return{
+     sendedMsg :''
+   }
+  },
   methods:{
       ...mapActions({clicking : 'incremntvl'})
 

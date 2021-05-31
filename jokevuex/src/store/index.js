@@ -24,7 +24,8 @@ export default new Vuex.Store({
       state.commit("setJoke",j.joke);
     },
    async incremntvl(){
-      this.state.testElm++;
+    //  this.state.testElm=payload;
+     this.state.testElm++;
       console.log(this.state.testElm);
     }
   },
